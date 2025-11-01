@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Be A Unicorn Design System - Professional & Clean
+All colors MUST be HSL for proper theming.
+*/
+
+@layer base {
+  :root {
+    /* Background & Surface Colors */
+    --background: 0 0% 100%;
+    --foreground: 224 15% 15%;
+    
+    /* Card & Surface Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 224 15% 15%;
+    
+    /* Popover & Overlays */
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 15% 15%;
+    
+    /* Brand Colors - Professional Purple */
+    --primary: 270 95% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 270 80% 55%;
+    
+    /* Professional Gray Secondary */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 15% 15%;
+    
+    /* Accent Color - Red like Venture Catalysts */
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Dark Orange for Domain Boxes */
+    --dark-orange: 25 95% 45%;
+    --dark-orange-foreground: 0 0% 100%;
+    
+    /* Muted & Neutral */
+    --muted: 220 14% 96%;
+    --muted-foreground: 224 15% 55%;
+    
+    /* Utility Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 270 95% 40%;
+    
+    /* Professional Shadows */
+    --shadow-card: 0 2px 8px -1px hsl(224 15% 15% / 0.08);
+    --shadow-elegant: 0 8px 24px -4px hsl(224 15% 15% / 0.12);
+    
+    /* Spacing & Layout */
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Background & Surface Colors */
+    --background: 224 15% 4%;
+    --foreground: 0 0% 98%;
+    
+    /* Card & Surface Elements */
+    --card: 224 15% 8%;
+    --card-foreground: 0 0% 98%;
+    
+    /* Popover & Overlays */
+    --popover: 224 15% 8%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Brand Colors - Professional Purple for dark */
+    --primary: 270 90% 65%;
+    --primary-foreground: 224 15% 4%;
+    --primary-light: 270 85% 75%;
+    
+    /* Professional Gray Secondary */
+    --secondary: 224 15% 15%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Accent Color */
+    --accent: 0 85% 65%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Dark Orange for Domain Boxes */
+    --dark-orange: 25 95% 60%;
+    --dark-orange-foreground: 0 0% 98%;
+    
+    /* Muted & Neutral */
+    --muted: 224 15% 15%;
+    --muted-foreground: 0 0% 70%;
+    
+    /* Utility Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 224 15% 20%;
+    --input: 224 15% 20%;
+    --ring: 270 90% 65%;
+
+    /* Sidebar for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Professional utility classes */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+@layer components {
+  /* Professional button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-lg shadow-card hover:bg-primary-light transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary border border-border text-foreground hover:bg-muted font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity duration-200;
+  }
+  
+  /* Card components */
+  .workshop-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-shadow duration-200;
+  }
+  
+  .metrics-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-card text-center;
+  }
+  
+  /* Text styles */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-6;
+  }
+  
+  .hero-title {
+    @apply text-4xl md:text-6xl font-bold leading-tight text-foreground;
+  }
+  
+  .accent-text {
+    @apply text-accent font-semibold;
+  }
+}
